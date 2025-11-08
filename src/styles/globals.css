@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	color-scheme: light;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@apply bg-white font-body text-lg leading-relaxed text-brand-charcoal antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	@apply font-heading tracking-tight text-brand-charcoal;
+}
+
+section {
+	@apply py-20;
+}
+
+a {
+	@apply transition-colors duration-200 ease-soft;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+	@apply outline-none ring-2 ring-brand-gold ring-offset-2 ring-offset-white;
+}
+
+.eyebrow {
+	@apply text-sm font-semibold uppercase tracking-[0.3em] text-brand-indigo;
+}
+
+.section-heading {
+	@apply text-4xl font-semibold leading-tight md:text-5xl;
+}
+
+.section-subheading {
+	@apply mt-4 max-w-2xl text-xl text-brand-charcoal/80;
+}
+
+.micro-divider {
+	@apply mx-auto mt-10 h-px w-24 bg-gradient-to-r from-transparent via-brand-gold to-transparent;
+}
+
+.card {
+	@apply rounded-2xl bg-white/90 p-8 shadow-subtle backdrop-blur;
+}
+
+.fade-in {
+	@apply opacity-0 translate-y-6;
+	animation: fade-up 0.24s ease-soft forwards;
+}
+
+@keyframes fade-up {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.sr-only {
+	@apply absolute -m-px h-px w-px overflow-hidden whitespace-nowrap border-0 p-0;
+	clip: rect(0, 0, 0, 0);
+}
+
+
+

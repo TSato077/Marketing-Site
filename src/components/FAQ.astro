@@ -1,0 +1,47 @@
+---
+const faqs = [
+	{ question: 'How long is each session?', answer: '30 minutes.' },
+	{
+		question: 'What’s included?',
+		answer: 'All unretouched images + 10 fully retouched final portraits.',
+	},
+	{
+		question: 'When will we receive our photos?',
+		answer: 'Within 7 days.',
+	},
+	{
+		question: 'Where are sessions held?',
+		answer: 'Handpicked outdoor and studio-style locations chosen for great light and timeless backdrops.',
+	},
+	{
+		question: 'What should we wear?',
+		answer: 'Coordinated neutrals — see the wardrobe guide above.',
+	},
+];
+---
+
+<section id="faq" class="bg-white">
+	<div class="mx-auto max-w-4xl px-6 lg:px-10">
+		<h2 class="section-heading">FAQs</h2>
+		<p class="section-subheading">Everything you need to know before booking your session.</p>
+		<div class="mt-12 space-y-6">
+			{faqs.map((faq) => (
+				<details class="group rounded-2xl border border-brand-indigo/10 bg-brand-gray/30 p-6 transition duration-200 ease-soft open:bg-brand-gray/70">
+					<summary class="flex cursor-pointer items-center justify-between gap-4 text-lg font-semibold text-brand-charcoal focus:outline-none">
+						<span>{faq.question}</span>
+						<span
+							aria-hidden="true"
+							class="text-2xl text-brand-indigo transition duration-200 ease-soft group-open:rotate-45"
+						>
+							+
+						</span>
+					</summary>
+					<p class="mt-4 text-base text-brand-charcoal/80">{faq.answer}</p>
+				</details>
+			))}
+		</div>
+	</div>
+</section>
+
+
+

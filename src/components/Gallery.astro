@@ -1,0 +1,38 @@
+---
+const gallery = [
+	{ src: '/images/gallery-1.jpg', alt: 'Family laughing together during golden hour portrait session.' },
+	{ src: '/images/gallery-2.jpg', alt: 'Parents holding their toddler for a holiday portrait.' },
+	{ src: '/images/gallery-3.jpg', alt: 'Siblings hugging and smiling during the shoot.' },
+	{ src: '/images/gallery-4.jpg', alt: 'Close-up of genuine laughter captured by Takashi Sato.' },
+	{ src: '/images/gallery-5.jpg', alt: 'Family walking together with scenic desert backdrop.' },
+	{ src: '/images/gallery-6.jpg', alt: 'Modern family styled in neutral wardrobe tones.' },
+	{ src: '/images/gallery-7.jpg', alt: 'Portrait of parents embracing during the session.' },
+	{ src: '/images/gallery-8.jpg', alt: 'Lifestyle moment showcasing candid family connection.' },
+];
+---
+
+<section id="gallery" class="bg-white">
+	<div class="mx-auto max-w-6xl px-6 lg:px-10">
+		<div class="mb-12 text-center">
+			<h2 class="section-heading">Gallery Preview</h2>
+			<p class="section-subheading mx-auto">
+				A glimpse into the refined, timeless imagery families receive from their SatoFoto session.
+			</p>
+		</div>
+		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			{gallery.map((image) => (
+				<div class="group overflow-hidden rounded-3xl border border-brand-indigo/10 bg-brand-gray/40 shadow-subtle transition duration-200 ease-soft hover:-translate-y-1 hover:shadow-xl">
+					<img
+						src={image.src}
+						alt={image.alt}
+						class="h-64 w-full object-cover transition duration-200 ease-soft group-hover:scale-[1.03]"
+						loading="lazy"
+					/>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+
+

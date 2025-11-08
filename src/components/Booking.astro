@@ -1,0 +1,173 @@
+<section id="booking" class="bg-white">
+	<div class="mx-auto max-w-6xl px-6 lg:px-10">
+		<div class="mb-12 max-w-3xl">
+			<h2 class="section-heading">Reserve Your Family’s Spot</h2>
+			<p class="section-subheading">Limited sessions. First-come, first-served.</p>
+		</div>
+		<div class="mb-12 rounded-3xl border border-dashed border-brand-indigo/30 bg-brand-gray/40 p-10 text-center">
+			<p class="text-base font-medium text-brand-charcoal">Booking widget coming soon.</p>
+			<p class="mt-2 text-sm text-brand-charcoal/70">We’ll embed our scheduling tool right here for instant checkout.</p>
+			<div id="booking-embed" class="sr-only">Booking widget placeholder</div>
+		</div>
+		<div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+			<div>
+				<form
+					data-booking-form
+					class="space-y-8 rounded-3xl border border-brand-indigo/10 bg-brand-gray/40 p-8 shadow-subtle"
+					novalidate
+				>
+					<div class="grid gap-6 md:grid-cols-2">
+						<div class="flex flex-col gap-2">
+							<label for="full-name" class="text-sm font-semibold text-brand-charcoal">Full Name</label>
+							<input
+								id="full-name"
+								name="fullName"
+								type="text"
+								required
+								placeholder="Alex Morgan"
+								class="rounded-md border border-brand-indigo/20 bg-white px-4 py-3 text-base text-brand-charcoal shadow-sm transition focus:border-brand-indigo/60 focus:outline-none focus:ring-2 focus:ring-brand-indigo/20"
+							/>
+						</div>
+						<div class="flex flex-col gap-2">
+							<label for="email" class="text-sm font-semibold text-brand-charcoal">Email</label>
+							<input
+								id="email"
+								name="email"
+								type="email"
+								required
+								placeholder="you@email.com"
+								class="rounded-md border border-brand-indigo/20 bg-white px-4 py-3 text-base text-brand-charcoal shadow-sm transition focus:border-brand-indigo/60 focus:outline-none focus:ring-2 focus:ring-brand-indigo/20"
+							/>
+						</div>
+						<div class="flex flex-col gap-2">
+							<label for="phone" class="text-sm font-semibold text-brand-charcoal">Phone</label>
+							<input
+								id="phone"
+								name="phone"
+								type="tel"
+								placeholder="(555) 123-4567"
+								class="rounded-md border border-brand-indigo/20 bg-white px-4 py-3 text-base text-brand-charcoal shadow-sm transition focus:border-brand-indigo/60 focus:outline-none focus:ring-2 focus:ring-brand-indigo/20"
+							/>
+						</div>
+						<div class="flex flex-col gap-2">
+							<label for="family-size" class="text-sm font-semibold text-brand-charcoal">Family Size</label>
+							<input
+								id="family-size"
+								name="familySize"
+								type="number"
+								min="1"
+								placeholder="4"
+								class="rounded-md border border-brand-indigo/20 bg-white px-4 py-3 text-base text-brand-charcoal shadow-sm transition focus:border-brand-indigo/60 focus:outline-none focus:ring-2 focus:ring-brand-indigo/20"
+							/>
+						</div>
+					</div>
+					<div class="grid gap-6 md:grid-cols-[1fr_1fr]">
+						<div class="flex flex-col gap-2">
+							<label for="date" class="text-sm font-semibold text-brand-charcoal">Date</label>
+							<input
+								id="date"
+								name="date"
+								type="date"
+								required
+								class="rounded-md border border-brand-indigo/20 bg-white px-4 py-3 text-base text-brand-charcoal shadow-sm transition focus:border-brand-indigo/60 focus:outline-none focus:ring-2 focus:ring-brand-indigo/20"
+							/>
+						</div>
+						<div class="flex flex-col gap-2">
+							<label for="time" class="text-sm font-semibold text-brand-charcoal">Time</label>
+							<input
+								id="time"
+								name="time"
+								type="time"
+								required
+								class="rounded-md border border-brand-indigo/20 bg-white px-4 py-3 text-base text-brand-charcoal shadow-sm transition focus:border-brand-indigo/60 focus:outline-none focus:ring-2 focus:ring-brand-indigo/20"
+							/>
+						</div>
+					</div>
+					<div class="flex flex-col gap-2">
+						<label for="notes" class="text-sm font-semibold text-brand-charcoal">Notes</label>
+						<textarea
+							id="notes"
+							name="notes"
+							rows="4"
+							placeholder="Tell us about your family or any special requests."
+							class="rounded-md border border-brand-indigo/20 bg-white px-4 py-3 text-base text-brand-charcoal shadow-sm transition focus:border-brand-indigo/60 focus:outline-none focus:ring-2 focus:ring-brand-indigo/20"
+						></textarea>
+					</div>
+					<div class="space-y-4">
+						<div id="policy-details" class="space-y-2 text-sm text-brand-charcoal/80">
+							<p>A non-refundable session fee of $300 is required to reserve your spot.</p>
+							<p>Cancellations made less than 7 days before your session are non-refundable.</p>
+							<p>Reschedules may be possible based on availability.</p>
+						</div>
+						<label class="flex items-start gap-3 text-sm text-brand-charcoal/80">
+							<input
+								id="booking-policy"
+								type="checkbox"
+								name="policy"
+								class="mt-1 h-5 w-5 rounded border border-brand-indigo/30 text-brand-indigo focus:ring-brand-indigo"
+								aria-describedby="policy-details"
+							/>
+							<span>I agree to the cancellation policy.</span>
+						</label>
+					</div>
+					<button
+						type="submit"
+						data-pay-button
+						class="inline-flex w-full items-center justify-center rounded-md bg-brand-indigo px-6 py-3 text-base font-semibold text-white shadow-subtle transition duration-200 ease-soft hover:bg-brand-charcoal disabled:cursor-not-allowed disabled:bg-brand-indigo/40"
+					>
+						Pay $300 Reservation Fee
+					</button>
+				</form>
+				<div
+					data-booking-success
+					class="hidden space-y-6 rounded-3xl border border-brand-indigo/10 bg-brand-gray/40 p-8 text-center shadow-subtle"
+				>
+					<h3 class="text-2xl font-semibold text-brand-charcoal">You’re all set, <span data-success-name>friend</span>!</h3>
+					<p class="text-base text-brand-charcoal/80">
+						Your session is confirmed for <span data-success-datetime>your selected time</span>.
+					</p>
+					<div class="flex flex-col items-center justify-center gap-3 sm:flex-row">
+						<a
+							href="#"
+							class="inline-flex items-center justify-center rounded-md bg-brand-indigo px-5 py-3 text-sm font-semibold text-white shadow-subtle transition hover:bg-brand-charcoal"
+						>
+							Add to Calendar (.ics)
+						</a>
+						<a
+							href="/WardrobeGuide.pdf"
+							class="inline-flex items-center justify-center rounded-md border border-brand-indigo px-5 py-3 text-sm font-semibold text-brand-indigo transition hover:border-brand-charcoal hover:text-brand-charcoal"
+						>
+							Download Wardrobe Guide
+						</a>
+					</div>
+				</div>
+			</div>
+			<aside class="space-y-6 rounded-3xl border border-brand-indigo/10 bg-brand-gray/20 p-8 shadow-subtle">
+				<div>
+					<p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-indigo">What to expect</p>
+					<ul class="mt-4 space-y-3 text-base text-brand-charcoal/85">
+						<li>Pre-session guidance and styling prep</li>
+						<li>Relaxed, guided experience on shoot day</li>
+						<li>All images delivered within 7 days</li>
+						<li>Online gallery ready for sharing and gifting</li>
+					</ul>
+				</div>
+				<div>
+					<p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-indigo">Need assistance?</p>
+					<p class="mt-3 text-base text-brand-charcoal/85">
+						Email <a href="mailto:hello@satofoto.com" class="font-semibold text-brand-indigo hover:text-brand-charcoal">hello@satofoto.com</a> or call <a href="tel:14805551234" class="font-semibold text-brand-indigo hover:text-brand-charcoal">(480) 555-1234</a>.
+					</p>
+				</div>
+			</aside>
+		</div>
+	</div>
+</section>
+
+<script type="module" is:inline>
+	import initBookingForm from '../utils/bookingForm.ts';
+
+	if (typeof window !== 'undefined') {
+		initBookingForm();
+	}
+</script>
+
