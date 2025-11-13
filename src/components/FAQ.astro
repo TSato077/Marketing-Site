@@ -1,6 +1,6 @@
 ---
 const faqs = [
-	{ question: 'How long is each session?', answer: '30 minutes.' },
+	{ question: 'How long is each session?', answer: '25 minutes.' },
 	{
 		question: 'What’s included?',
 		answer: 'All unretouched images + 10 fully retouched final portraits.',
@@ -11,11 +11,19 @@ const faqs = [
 	},
 	{
 		question: 'Where are sessions held?',
-		answer: 'Handpicked outdoor and studio-style locations chosen for great light and timeless backdrops.',
+		answer: 'Sahuaro Ranch Park, Glendale, AZ.',
 	},
 	{
 		question: 'What should we wear?',
 		answer: 'Coordinated neutrals — see the wardrobe guide above.',
+	},
+	{
+		question: 'Do you offer private sessions?',
+		answer: 'Yes.',
+		link: {
+			href: 'mailto:tsato077@gmail.com',
+			label: 'Email to inquire.',
+		},
 	},
 ];
 ---
@@ -36,7 +44,17 @@ const faqs = [
 							+
 						</span>
 					</summary>
-					<p class="mt-4 text-base text-brand-charcoal/80">{faq.answer}</p>
+					<p class="mt-4 text-base text-brand-charcoal/80">
+						{faq.answer}
+						{faq.link && (
+							<>
+								{' '}
+								<a href={faq.link.href} class="font-semibold text-brand-indigo hover:text-brand-charcoal">
+									{faq.link.label}
+								</a>
+							</>
+						)}
+					</p>
 				</details>
 			))}
 		</div>

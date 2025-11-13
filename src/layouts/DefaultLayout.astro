@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 
 const {
 	title = 'SatoFoto | Holiday Family Portrait Experience — Photo Session with Takashi Sato',
-	description = 'Premium 30-minute holiday family portraits in Arizona by SatoFoto. Limited Offer $300 (Reg $500). All unretouched images + 10 retouched finals. Book now.',
+	description = 'Premium 25-minute holiday family portraits in Arizona by SatoFoto. $250 mini sessions at Sahuaro Ranch Park with all images + 10 retouched finals.',
 	ogImage = '/images/hero.jpg',
 } = Astro.props;
 
@@ -29,17 +29,17 @@ const schemaOrg = {
 			'@type': 'Product',
 			name: 'Holiday Family Portrait Mini Session',
 			description:
-				'Premium 30-minute holiday family portrait experience by SatoFoto. Includes all unretouched images plus 10 retouched finals.',
+				'Premium 25-minute holiday family portrait experience by SatoFoto. Includes all unretouched images plus 10 retouched finals.',
 			brand: {
 				'@type': 'Brand',
 				name: 'SatoFoto',
 			},
 			offers: {
 				'@type': 'Offer',
-				price: '300',
+				price: '250',
 				priceCurrency: 'USD',
 				availability: 'https://schema.org/InStock',
-				url: 'https://satofoto.com/#booking',
+				url: 'https://satofoto.com/#reserve',
 			},
 		},
 	],
@@ -79,11 +79,12 @@ const schemaOrg = {
 		<div class="fixed bottom-0 left-0 right-0 z-40 bg-brand-indigo/95 px-4 py-3 text-white shadow-subtle md:hidden">
 			<div class="mx-auto flex max-w-3xl items-center justify-between gap-4">
 				<div>
-					<p class="text-sm font-semibold tracking-wide">Reserve Now — $300</p>
+					<p class="text-sm font-semibold tracking-wide">Reserve Now — $250</p>
 					<p class="text-xs text-white/80">Limited holiday sessions available</p>
 				</div>
 				<a
-					href="#booking"
+					href="#reserve"
+					data-mailto-trigger="mobile"
 					class="shrink-0 rounded-md bg-white px-4 py-2 text-sm font-semibold text-brand-indigo transition duration-200 ease-soft hover:bg-brand-gray"
 				>
 					Book Now
