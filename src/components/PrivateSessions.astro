@@ -1,0 +1,50 @@
+---
+const privateFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScfMX12xdnQET-hoJ-kv_WFspPK-oFAuAM1G9qi1ZTOqa9PLw/viewform';
+---
+
+<section id="private-sessions" class="bg-gradient-to-b from-white via-brand-gray/40 to-white">
+	<div class="mx-auto max-w-4xl px-6 py-16 text-center lg:px-10">
+		<h2 class="section-heading">Private Sessions Available</h2>
+		<p class="section-subheading mx-auto">
+			Looking for a more personalized experience? Private sessions and extended family shoots are available upon request.
+		</p>
+		<div class="mx-auto mt-8 max-w-2xl rounded-3xl border border-brand-gold/30 bg-white/95 p-8 shadow-subtle">
+			<p class="mb-6 text-base text-brand-charcoal/80">
+				Private sessions offer flexibility in location, timing, and session length. Perfect for extended families, special occasions, or when you need a more customized portrait experience.
+			</p>
+			<button
+				type="button"
+				data-open-private-form
+				data-form-url={privateFormUrl}
+				class="inline-flex items-center justify-center rounded-md bg-brand-indigo px-8 py-3 text-base font-semibold text-white shadow-subtle transition duration-200 ease-soft hover:-translate-y-0.5 hover:bg-brand-holiday hover:shadow-lg"
+			>
+				Book a Private Session
+			</button>
+		</div>
+	</div>
+</section>
+
+<script is:inline>
+	(function() {
+		const openPrivateFormButton = document.querySelector('[data-open-private-form]');
+		if (openPrivateFormButton) {
+			const formUrl = openPrivateFormButton.getAttribute('data-form-url');
+			if (formUrl) {
+				openPrivateFormButton.addEventListener('click', () => {
+					// Open form in popup window
+					const width = 800;
+					const height = 1000;
+					const left = (window.innerWidth - width) / 2;
+					const top = (window.innerHeight - height) / 2;
+					
+					window.open(
+						formUrl,
+						'SatoFoto Private Booking',
+						`width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+					);
+				});
+			}
+		}
+	})();
+</script>
+
