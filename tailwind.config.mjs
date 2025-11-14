@@ -15,11 +15,11 @@ export default {
 		extend: {
 			colors: {
 				brand: {
-					indigo: '#2A3E67',
-					charcoal: '#1B1B1B',
-					gold: '#DAA520',
-					gray: '#F6F7F9',
-					holiday: '#B22222',
+					indigo: '#264337',
+					charcoal: '#2A1D19',
+					gold: '#C8A968',
+					gray: '#F7F3ED',
+					holiday: '#7A2E2F',
 				},
 			},
 			fontFamily: {

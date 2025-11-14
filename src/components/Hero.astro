@@ -1,6 +1,10 @@
-<section id="hero" class="relative overflow-hidden bg-brand-holiday/10 pt-36">
+---
+const heroImage = '/images/hero-family.jpg';
+const heroAlt = 'Family portrait under the sunlit barn walkway at Sahuaro Ranch Park.';
+---
+<section id="hero" class="relative overflow-hidden bg-gradient-to-b from-brand-gray via-white to-brand-gray pt-36">
 	<div class="absolute inset-0 -z-10">
-		<div class="absolute inset-0 bg-gradient-to-br from-white via-white/90 to-brand-holiday/20" aria-hidden="true"></div>
+		<div class="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-brand-holiday/10" aria-hidden="true"></div>
 	</div>
 	<div class="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-10">
 		<div class="space-y-6">
@@ -11,9 +15,9 @@
 			<p class="max-w-xl text-xl text-brand-charcoal/85">
 				A 25-minute curated portrait experience for modern families — effortless, elegant, and ready for the season.
 			</p>
-			<div class="rounded-2xl border border-brand-holiday/20 bg-white/75 p-6 backdrop-blur">
+			<div class="rounded-2xl border border-brand-gold/40 bg-white/80 p-6 backdrop-blur">
 				<p class="text-base font-medium text-brand-charcoal">
-					<span class="font-semibold text-brand-indigo">$250</span> · All unretouched images + 10 fully retouched finals · Sahuaro Ranch Park (Glendale, AZ)
+					<span class="font-semibold text-brand-indigo">$300</span> · All unretouched images + 10 fully retouched finals · Sahuaro Ranch Park (Glendale, AZ)
 				</p>
 			</div>
 			<p class="text-sm font-medium uppercase tracking-[0.3em] text-brand-charcoal/70">
@@ -23,29 +27,32 @@
 				<a
 					href="#reserve"
 					data-mailto-trigger="hero"
-					class="inline-flex items-center justify-center rounded-md bg-brand-indigo px-6 py-3 text-base font-semibold text-white shadow-subtle transition duration-200 ease-soft hover:-translate-y-0.5 hover:bg-brand-charcoal hover:shadow-lg"
+					class="inline-flex items-center justify-center rounded-md bg-brand-indigo px-6 py-3 text-base font-semibold text-white shadow-subtle transition duration-200 ease-soft hover:-translate-y-0.5 hover:bg-brand-holiday hover:shadow-lg"
 				>
 					Reserve Your Session
 				</a>
 				<a
 					href="#reserve"
-					class="inline-flex items-center justify-center rounded-md border border-brand-indigo px-6 py-3 text-base font-semibold text-brand-indigo transition duration-200 ease-soft hover:-translate-y-0.5 hover:border-brand-charcoal hover:text-brand-charcoal"
+					class="inline-flex items-center justify-center rounded-md border border-brand-holiday/60 px-6 py-3 text-base font-semibold text-brand-holiday transition duration-200 ease-soft hover:-translate-y-0.5 hover:border-brand-indigo hover:text-brand-indigo"
 				>
 					View Dates &amp; Times
 				</a>
 			</div>
 		</div>
-		<figure class="relative h-full w-full">
+<figure class="relative h-full w-full">
+		{heroImage ? (
 			<div class="relative overflow-hidden rounded-3xl shadow-subtle">
-				<img
-					src="/images/hero.jpg"
-					alt="Modern family sharing a joyful moment during the SatoFoto holiday portrait session."
-					class="h-full w-full object-cover"
-					loading="lazy"
-				/>
+				<img src={heroImage} alt={heroAlt || 'SatoFoto hero image'} class="h-full w-full object-cover" loading="lazy" />
 				<div class="absolute inset-0 bg-gradient-to-t from-brand-holiday/25 via-transparent to-transparent" aria-hidden="true"></div>
 			</div>
-		</figure>
+		) : (
+			<div class="relative flex h-full min-h-[320px] items-center justify-center rounded-3xl border border-dashed border-brand-gold/40 bg-white/70 p-10 text-center text-brand-charcoal/60 shadow-subtle">
+				<p class="max-w-xs text-sm font-medium uppercase tracking-[0.3em]">
+					Add your hero image by setting <code>heroImage</code> in <code>Hero.astro</code>.
+				</p>
+			</div>
+		)}
+	</figure>
 	</div>
 </section>
 

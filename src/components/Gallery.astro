@@ -1,13 +1,13 @@
 ---
-const gallery = [
-	{ src: '/images/gallery-1.jpg', alt: 'Family laughing together during golden hour portrait session.' },
-	{ src: '/images/gallery-2.jpg', alt: 'Parents holding their toddler for a holiday portrait.' },
-	{ src: '/images/gallery-3.jpg', alt: 'Siblings hugging and smiling during the shoot.' },
-	{ src: '/images/gallery-4.jpg', alt: 'Close-up of genuine laughter captured by Takashi Sato.' },
-	{ src: '/images/gallery-5.jpg', alt: 'Family walking together with scenic desert backdrop.' },
-	{ src: '/images/gallery-6.jpg', alt: 'Modern family styled in neutral wardrobe tones.' },
-	{ src: '/images/gallery-7.jpg', alt: 'Portrait of parents embracing during the session.' },
-	{ src: '/images/gallery-8.jpg', alt: 'Lifestyle moment showcasing candid family connection.' },
+const gallery: { src: string; alt: string }[] = [
+	{ src: '/images/gallery-couple-close.jpg', alt: 'Warm close-up of Takashi Sato and his wife smiling at sunset.' },
+	{ src: '/images/gallery-mom-boys-wall.jpg', alt: 'Mom with her two sons standing against the white barn wall in coordinated greens.' },
+	{ src: '/images/gallery-dad-portrait.jpg', alt: 'Portrait of Takashi Sato seated on rustic white stairs at Sahuaro Ranch Park.' },
+	{ src: '/images/gallery-mom-portrait.jpg', alt: 'Smiling portrait of mom leaning against the white barn structure.' },
+	{ src: '/images/gallery-family-barn.jpg', alt: 'Family standing together inside the sunlit barn at Sahuaro Ranch Park.' },
+	{ src: '/images/gallery-dad-sons.jpg', alt: 'Dad with his two sons framed by white barn beams and golden light.' },
+	{ src: '/images/gallery-son-younger.jpg', alt: 'Younger son smiling with arms crossed beside the barn railing.' },
+	{ src: '/images/gallery-son-older.jpg', alt: 'Older son leaning casually against the barn frame in soft sunset light.' },
 ];
 ---
 
@@ -19,18 +19,27 @@ const gallery = [
 				A glimpse into the refined, timeless imagery families receive from their SatoFoto session.
 			</p>
 		</div>
-		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-			{gallery.map((image) => (
-				<div class="group overflow-hidden rounded-3xl border border-brand-indigo/10 bg-brand-gray/40 shadow-subtle transition duration-200 ease-soft hover:-translate-y-1 hover:shadow-xl">
-					<img
-						src={image.src}
-						alt={image.alt}
-						class="h-64 w-full object-cover transition duration-200 ease-soft group-hover:scale-[1.03]"
-						loading="lazy"
-					/>
-				</div>
-			))}
-		</div>
+		{gallery.length ? (
+			<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				{gallery.map((image) => (
+					<div class="group overflow-hidden rounded-3xl border border-brand-gold/30 bg-white shadow-subtle transition duration-200 ease-soft hover:-translate-y-1 hover:shadow-xl">
+						<img
+							src={image.src}
+							alt={image.alt}
+							class="h-64 w-full object-cover transition duration-200 ease-soft group-hover:scale-[1.03]"
+							loading="lazy"
+						/>
+					</div>
+				))}
+			</div>
+		) : (
+			<div class="rounded-3xl border border-dashed border-brand-gold/40 bg-brand-gray/50 p-10 text-center text-brand-charcoal/70">
+				<p class="text-sm font-medium uppercase tracking-[0.3em]">Gallery coming soon</p>
+				<p class="mt-3 text-base">
+					Add images by updating the <code>gallery</code> array in <code>src/components/Gallery.astro</code>.
+				</p>
+			</div>
+		)}
 	</div>
 </section>
 

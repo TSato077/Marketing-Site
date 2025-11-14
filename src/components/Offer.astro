@@ -1,13 +1,38 @@
-<section id="offer" class="bg-brand-gray/40">
-	<div class="mx-auto max-w-5xl px-6 text-center lg:px-10">
-		<h2 class="section-heading">Curated Sessions. Effortless Experience. Exceptional Results.</h2>
-		<p class="section-subheading mx-auto">
-			A limited-edition portrait experience designed for families who want timeless imagery without the stress.
-		</p>
-		<div class="mx-auto mt-12 max-w-3xl rounded-3xl border border-brand-indigo/10 bg-white p-10 shadow-subtle">
+---
+const offerImage1 = '/images/gallery-son-younger.jpg';
+const offerImage1Alt = 'Younger son smiling with arms crossed beside the barn railing.';
+const offerImage2 = '/images/gallery-dad-portrait.jpg';
+const offerImage2Alt = 'Portrait of Takashi Sato seated on rustic white stairs at Sahuaro Ranch Park.';
+const offerImage3 = '/images/gallery-son-older.jpg';
+const offerImage3Alt = 'Older son leaning casually against the barn frame in soft sunset light.';
+---
+
+<section id="offer" class="bg-gradient-to-b from-white via-brand-gray/60 to-white">
+	<div class="mx-auto max-w-6xl px-6 lg:px-10">
+		<div class="mx-auto max-w-5xl text-center">
+			<h2 class="section-heading">Curated Sessions. Effortless Experience. Exceptional Results.</h2>
+			<p class="section-subheading mx-auto">
+				A limited-edition portrait experience designed for families who want timeless imagery without the stress.
+			</p>
+		</div>
+		<div class="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
+			<figure class="overflow-hidden rounded-3xl border border-brand-gold/40 bg-white shadow-subtle">
+				<img src={offerImage1} alt={offerImage1Alt} class="h-full w-full object-cover" loading="lazy" />
+			</figure>
+			<figure class="overflow-hidden rounded-3xl border border-brand-gold/40 bg-white shadow-subtle">
+				<img src={offerImage2} alt={offerImage2Alt} class="h-full w-full object-cover" loading="lazy" />
+			</figure>
+			<figure class="overflow-hidden rounded-3xl border border-brand-gold/40 bg-white shadow-subtle">
+				<img src={offerImage3} alt={offerImage3Alt} class="h-full w-full object-cover" loading="lazy" />
+			</figure>
+		</div>
+		<div class="mx-auto mt-12 max-w-3xl rounded-3xl border border-brand-gold/30 bg-white/95 p-10 shadow-subtle">
 			<div class="space-y-3">
-				<p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-indigo">
-					Holiday Mini Session — $250
+				<p class="text-sm font-semibold uppercase tracking-[0.3em] text-brand-holiday">
+					Holiday Mini Session — $300
+				</p>
+				<p class="text-xs text-brand-charcoal/70 italic">
+					$300 includes sales tax
 				</p>
 				<ul class="space-y-3 text-left text-base text-brand-charcoal/80">
 					<li class="flex items-start gap-3">
@@ -38,7 +63,7 @@
 				</p>
 				<p class="text-sm text-brand-charcoal/70">
 					Private sessions and extended family shoots are{' '}
-					<a href="mailto:tsato077@gmail.com" class="font-semibold text-brand-indigo hover:text-brand-charcoal">
+					<a href="mailto:tsato077@gmail.com" class="font-semibold text-brand-holiday hover:text-brand-indigo">
 						available upon request
 					</a>
 					.

@@ -1,0 +1,113 @@
+---
+const featureImage = '/images/147A7576 (1).jpg';
+const featureImageAlt = 'Family of four smiling in front of a white wooden gazebo structure at Sahuaro Ranch Park.';
+
+// GOOGLE FORM SETUP INSTRUCTIONS:
+// Create a Google Form with the following exact fields/questions:
+//
+// 1. First Name (Short answer) - REQUIRED
+// 2. Last Name (Short answer) - REQUIRED
+// 3. Email (Short answer, email validation) - REQUIRED
+// 4. Phone (Short answer) - OPTIONAL
+// 5. Number of Family Members (Short answer, number validation) - OPTIONAL
+// 6. Preferred Date/Time Slots (Checkboxes) - REQUIRED, allow up to 3 selections
+//    Options:
+//    - Nov 22 — 3:00–3:25 PM
+//    - Nov 22 — 3:30–3:55 PM
+//    - Nov 22 — 4:00–4:25 PM
+//    - Nov 22 — 4:30–4:55 PM
+//    - Nov 22 — 5:00–5:25 PM
+//    - Nov 23 — 3:00–3:25 PM
+//    - Nov 23 — 3:30–3:55 PM
+//    - Nov 23 — 4:00–4:25 PM
+//    - Nov 23 — 4:30–4:55 PM
+//    - Nov 23 — 5:00–5:25 PM
+// 7. Questions / Notes (Paragraph) - OPTIONAL
+//
+// Add a text/paragraph at the end: "I understand payment is required to reserve a spot. Please send the invoice link to confirm my booking."
+
+const slots = [
+	{
+		date: 'Nov 22',
+		items: ['3:00–3:25 PM', '3:30–3:55 PM', '4:00–4:25 PM', '4:30–4:55 PM', '5:00–5:25 PM'],
+	},
+	{
+		date: 'Nov 23',
+		items: ['3:00–3:25 PM', '3:30–3:55 PM', '4:00–4:25 PM', '4:30–4:55 PM', '5:00–5:25 PM'],
+	},
+];
+---
+
+<section id="reserve" class="bg-white">
+	<div class="mx-auto max-w-6xl px-6 lg:px-10">
+		<div class="mb-12 max-w-3xl">
+			<h2 class="section-heading">Reserve Your Family’s Spot</h2>
+			<p class="section-subheading">
+				Nov 22, 23 at Sahuaro Ranch Park (Glendale, AZ) — Limited sessions
+			</p>
+		</div>
+		<div>
+			<div class="space-y-8">
+				<figure class="overflow-hidden rounded-3xl border border-brand-gold/40 bg-white shadow-subtle">
+					<img src={featureImage} alt={featureImageAlt} class="h-full w-full object-cover" loading="lazy" />
+				</figure>
+				<div class="rounded-3xl border border-brand-gold/30 bg-brand-gray/60 p-8 shadow-subtle">
+					<h3 class="text-lg font-semibold text-brand-charcoal">Available Sessions</h3>
+					<div class="mt-6 space-y-6">
+						{slots.map((group) => (
+							<div>
+								<p class="font-semibold uppercase tracking-[0.2em] text-brand-holiday">{group.date}</p>
+								<ul class="mt-3 flex flex-wrap gap-3 text-sm font-medium text-brand-charcoal/85">
+									{group.items.map((time) => (
+										<li class="rounded-full border border-brand-gold/40 bg-white px-4 py-2 shadow-sm">
+											{time}
+										</li>
+									))}
+								</ul>
+							</div>
+						))}
+					</div>
+					<p class="mt-6 text-sm text-brand-charcoal/70">
+						Complete the form to reserve your spot — payment is required to secure your session. We'll send an invoice link once we confirm availability.
+					</p>
+					<p class="mt-3 text-sm text-brand-charcoal/70">
+						Looking for a private session? <a href="mailto:tsato077@gmail.com" class="font-semibold text-brand-holiday hover:text-brand-indigo">Email to inquire.</a>
+					</p>
+				</div>
+				<div class="rounded-3xl border border-brand-gold/30 bg-brand-gray/60 p-8 shadow-subtle">
+					<h3 class="text-lg font-semibold text-brand-charcoal mb-4">Location & Directions</h3>
+					<div class="space-y-4">
+						<div>
+							<p class="font-semibold text-brand-charcoal">Sahuaro Ranch Park</p>
+							<p class="text-sm text-brand-charcoal/80">9802 N 59th Ave, Glendale, AZ 85302</p>
+							<p class="mt-1 text-xs text-brand-charcoal/70">Parking lot location</p>
+						</div>
+						<div class="overflow-hidden rounded-2xl border border-brand-gold/40 bg-white">
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.5!2d-112.186!3d33.5765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b6!2sSahuaro%20Ranch%20Park%20Parking%20Lot!5e0!3m2!1sen!2sus!4v1234567890"
+								width="100%"
+								height="300"
+								style="border:0;"
+								allowfullscreen=""
+								loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"
+								title="Sahuaro Ranch Park Parking Lot"
+								class="w-full"
+							></iframe>
+						</div>
+						<a
+							href="https://www.google.com/maps/dir/?api=1&destination=Sahuaro+Ranch+Park+Parking+Lot,+9802+N+59th+Ave,+Glendale,+AZ+85302"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center justify-center gap-2 rounded-md border border-brand-gold/40 bg-white px-4 py-2 text-sm font-semibold text-brand-indigo transition duration-200 ease-soft hover:-translate-y-0.5 hover:border-brand-holiday hover:text-brand-holiday"
+						>
+							<span>Get Directions to Parking Lot</span>
+							<span aria-hidden="true">→</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+

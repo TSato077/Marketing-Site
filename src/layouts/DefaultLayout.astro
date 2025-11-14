@@ -5,9 +5,10 @@ import Footer from '../components/Footer.astro';
 
 const {
 	title = 'SatoFoto | Holiday Family Portrait Experience — Photo Session with Takashi Sato',
-	description = 'Premium 25-minute holiday family portraits in Arizona by SatoFoto. $250 mini sessions at Sahuaro Ranch Park with all images + 10 retouched finals.',
-	ogImage = '/images/hero.jpg',
+	description = 'Premium 25-minute holiday family portraits in Arizona by SatoFoto. $300 mini sessions at Sahuaro Ranch Park with all images + 10 retouched finals.',
+	ogImage,
 } = Astro.props;
+const resolvedOgImage = typeof ogImage === 'string' && ogImage.length > 0 ? ogImage : undefined;
 
 const schemaOrg = {
 	'@context': 'https://schema.org',
@@ -36,7 +37,7 @@ const schemaOrg = {
 			},
 			offers: {
 				'@type': 'Offer',
-				price: '250',
+				price: '300',
 				priceCurrency: 'USD',
 				availability: 'https://schema.org/InStock',
 				url: 'https://satofoto.com/#reserve',
@@ -59,12 +60,16 @@ const schemaOrg = {
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://satofoto.com" />
-		<meta property="og:image" content={ogImage} />
-		<meta property="og:image:alt" content="Family gathered for portraits during the SatoFoto holiday session experience." />
+		{resolvedOgImage && (
+			<>
+				<meta property="og:image" content={resolvedOgImage} />
+				<meta property="og:image:alt" content="Family gathered for portraits during the SatoFoto holiday session experience." />
+			</>
+		)}
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={ogImage} />
+		{resolvedOgImage && <meta name="twitter:image" content={resolvedOgImage} />}
 		<script type="application/ld+json">
 			{JSON.stringify(schemaOrg)}
 		</script>
@@ -79,7 +84,7 @@ const schemaOrg = {
 		<div class="fixed bottom-0 left-0 right-0 z-40 bg-brand-indigo/95 px-4 py-3 text-white shadow-subtle md:hidden">
 			<div class="mx-auto flex max-w-3xl items-center justify-between gap-4">
 				<div>
-					<p class="text-sm font-semibold tracking-wide">Reserve Now — $250</p>
+					<p class="text-sm font-semibold tracking-wide">Reserve Now — $300</p>
 					<p class="text-xs text-white/80">Limited holiday sessions available</p>
 				</div>
 				<a

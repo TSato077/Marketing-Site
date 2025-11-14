@@ -1,3 +1,8 @@
+---
+const guideImage = '/images/gallery-couple-close.jpg';
+const guideImageAlt = 'Takashi Sato and his wife smiling together in warm sunset light.';
+---
+
 <section id="guide" class="bg-white">
 	<div class="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:px-10">
 		<div class="space-y-6">
@@ -5,15 +10,20 @@
 			<p class="text-xl text-brand-charcoal/85">
 				With decades in commercial, corporate, and editorial photography, Takashi Sato brings professional-grade precision and artistry to every portrait — creating authentic, timeless images your family will treasure.
 			</p>
-			<p class="text-sm font-medium uppercase tracking-[0.3em] text-brand-indigo">SatoFoto — Phoenix, Arizona</p>
+			<p class="text-sm font-medium uppercase tracking-[0.3em] text-brand-holiday">SatoFoto — Phoenix, Arizona</p>
 		</div>
-		<div class="card space-y-4">
-			<p class="text-sm uppercase tracking-[0.3em] text-brand-indigo">Why families trust Takashi</p>
-			<ul class="space-y-3 text-base text-brand-charcoal/80">
-				<li>Calm, guided direction for natural expressions</li>
-				<li>Attention to detail tailored to modern families</li>
-				<li>Professional lighting and composition expertise</li>
-			</ul>
+		<div class="space-y-6">
+			<figure class="overflow-hidden rounded-3xl border border-brand-gold/40 bg-white shadow-subtle">
+				<img src={guideImage} alt={guideImageAlt} class="h-full w-full object-cover" loading="lazy" />
+			</figure>
+			<div class="card space-y-4">
+				<p class="text-sm uppercase tracking-[0.3em] text-brand-holiday">Why families trust Takashi</p>
+				<ul class="space-y-3 text-base text-brand-charcoal/80">
+					<li>Calm, guided direction for natural expressions</li>
+					<li>Attention to detail tailored to modern families</li>
+					<li>Professional lighting and composition expertise</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </section>

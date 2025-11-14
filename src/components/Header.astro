@@ -1,32 +1,14 @@
----
-const navLinks = [
-	{ href: '#hero', label: 'Home' },
-	{ href: '#gallery', label: 'Portfolio' },
-	{ href: '#booking', label: 'Book Now' },
-];
----
-
 <header data-header class="site-header fixed inset-x-0 top-0 z-50 border-b border-transparent bg-white/80 backdrop-blur-md transition duration-200 ease-soft">
 	<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-10">
-		<a href="#hero" class="text-lg font-semibold tracking-wide text-brand-indigo transition hover:text-brand-charcoal">
-			SatoFoto
+		<a href="#hero" class="flex items-center gap-3 transition-opacity hover:opacity-80">
+			<img src="/SatoFotoLogo40x40.png" alt="SatoFoto" class="h-10 w-10 object-contain" loading="eager" />
+			<span class="font-heading text-lg font-semibold tracking-wide text-brand-indigo transition hover:text-brand-charcoal">SatoFoto</span>
 		</a>
-		<nav aria-label="Primary navigation" class="hidden items-center gap-8 text-sm font-medium md:flex">
-			{navLinks.map((link) => (
-				<a href={link.href} class="text-brand-charcoal transition hover:text-brand-indigo" rel="nofollow">
-					{link.label}
-				</a>
-			))}
-		</nav>
 		<a
-			href="#booking"
-			class="hidden rounded-md bg-brand-indigo px-5 py-2 text-sm font-semibold text-white shadow-subtle transition duration-200 ease-soft hover:bg-brand-charcoal md:inline-flex"
+			href="#reserve"
+			class="inline-flex items-center justify-center rounded-md bg-brand-indigo px-5 py-2 text-sm font-semibold text-white shadow-subtle transition duration-200 ease-soft hover:bg-brand-charcoal"
 		>
 			Book Now
-		</a>
-		<a href="#booking" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-indigo md:hidden">
-			<span>Book Now</span>
-			<span aria-hidden="true">→</span>
 		</a>
 	</div>
 </header>
@@ -46,9 +28,9 @@ const navLinks = [
 
 <style>
 	.site-header.is-scrolled {
-		background-color: rgba(42, 62, 103, 0.97);
-		border-bottom-color: rgba(42, 62, 103, 0.2);
-		box-shadow: 0 12px 30px -22px rgba(12, 23, 35, 0.7);
+		background-color: rgba(38, 67, 55, 0.94);
+		border-bottom-color: rgba(200, 169, 104, 0.35);
+		box-shadow: 0 12px 30px -22px rgba(24, 36, 29, 0.65);
 		color: #fff;
 	}
 
@@ -60,13 +42,25 @@ const navLinks = [
 		color: #f6f7f9;
 	}
 
-	.site-header.is-scrolled a[href='#booking'] {
-		background-color: #ffffff;
-		color: #2a3e67;
+	.site-header.is-scrolled a[href='#hero'] span {
+		color: rgba(255, 255, 255, 0.9);
 	}
 
-	.site-header.is-scrolled a[href='#booking']:hover {
-		background-color: #f6f7f9;
+	.site-header.is-scrolled a[href='#hero']:hover span {
+		color: #f6f7f9;
+	}
+
+	.site-header.is-scrolled a[href='#reserve'] {
+		background-color: #ffffff;
+		color: #264337;
+	}
+
+	.site-header.is-scrolled a[href='#reserve']:hover {
+		background-color: #f7f3ed;
+	}
+
+	.site-header.is-scrolled img {
+		filter: brightness(0) invert(1);
 	}
 </style>
 

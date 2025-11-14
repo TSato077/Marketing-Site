@@ -1,4 +1,9 @@
-<section id="plan" class="bg-brand-gray/40">
+---
+const planImage = '/images/gallery-mom-boys-wall.jpg';
+const planImageAlt = 'Mom with her two sons smiling against the white barn wall.';
+---
+
+<section id="plan" class="bg-white">
 	<div class="mx-auto max-w-6xl px-6 lg:px-10">
 		<div class="lg:flex lg:items-end lg:justify-between">
 			<div class="max-w-2xl">
@@ -7,26 +12,29 @@
 					We designed the entire experience to feel effortless from start to finish.
 				</p>
 			</div>
-			<a href="#reserve" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-indigo transition hover:text-brand-charcoal">
+			<a href="#reserve" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-holiday transition hover:text-brand-indigo">
 				View Available Dates
 				<span aria-hidden="true">→</span>
 			</a>
 		</div>
+		<figure class="mt-12 overflow-hidden rounded-3xl border border-brand-gold/40 bg-white shadow-subtle">
+			<img src={planImage} alt={planImageAlt} class="h-full w-full object-cover" loading="lazy" />
+		</figure>
 		<ol class="mt-12 grid gap-6 md:grid-cols-3">
-			<li class="card h-full space-y-4">
-				<span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-indigo text-base font-semibold text-white">1</span>
+			<li class="card h-full space-y-4 bg-white/90">
+				<span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-holiday text-base font-semibold text-white">1</span>
 				<p class="text-base text-brand-charcoal/80">
-					<strong class="text-lg font-semibold text-brand-charcoal">Pick your date and time slot</strong> — choose what fits your family’s schedule.
+					<strong class="text-lg font-semibold text-brand-charcoal">Fill out the form</strong> — complete the booking form with your family details and preferred time slots.
 				</p>
 			</li>
-			<li class="card h-full space-y-4">
-				<span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-indigo text-base font-semibold text-white">2</span>
+			<li class="card h-full space-y-4 bg-white/90">
+				<span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-holiday text-base font-semibold text-white">2</span>
 				<p class="text-base text-brand-charcoal/80">
-					<strong class="text-lg font-semibold text-brand-charcoal">Email your request</strong> — we’ll confirm and send the payment link to reserve.
+					<strong class="text-lg font-semibold text-brand-charcoal">Confirm your time slot</strong> — we'll confirm availability and send the payment link to reserve.
 				</p>
 			</li>
-			<li class="card h-full space-y-4">
-				<span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-indigo text-base font-semibold text-white">3</span>
+			<li class="card h-full space-y-4 bg-white/90">
+				<span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-holiday text-base font-semibold text-white">3</span>
 				<p class="text-base text-brand-charcoal/80">
 					<strong class="text-lg font-semibold text-brand-charcoal">Show up and enjoy</strong> — receive all images + 10 retouched finals within a week.
 				</p>

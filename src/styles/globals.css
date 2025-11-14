@@ -13,7 +13,7 @@ html {
 }
 
 body {
-	@apply bg-white font-body text-lg leading-relaxed text-brand-charcoal antialiased;
+	@apply bg-brand-gray font-body text-lg leading-relaxed text-brand-charcoal antialiased;
 }
 
 h1,
@@ -40,7 +40,7 @@ select:focus-visible {
 }
 
 .eyebrow {
-	@apply text-sm font-semibold uppercase tracking-[0.3em] text-brand-indigo;
+	@apply text-sm font-semibold uppercase tracking-[0.3em] text-brand-gold;
 }
 
 .section-heading {
@@ -52,11 +52,11 @@ select:focus-visible {
 }
 
 .micro-divider {
-	@apply mx-auto mt-10 h-px w-24 bg-gradient-to-r from-transparent via-brand-gold to-transparent;
+	@apply mx-auto mt-10 h-px w-24 bg-gradient-to-r from-transparent via-brand-holiday/70 to-transparent;
 }
 
 .card {
-	@apply rounded-2xl bg-white/90 p-8 shadow-subtle backdrop-blur;
+	@apply rounded-2xl bg-white/95 p-8 shadow-subtle backdrop-blur;
 }
 
 .fade-in {
