@@ -4,12 +4,14 @@
 			<img src="/SatoFotoLogo40x40.png" alt="SatoFoto" class="h-10 w-10 object-contain" loading="eager" />
 			<span class="font-heading text-lg font-semibold tracking-wide text-brand-indigo transition hover:text-brand-charcoal">SatoFoto</span>
 		</a>
-		<a
-			href="#reserve"
+		<button
+			type="button"
+			data-open-mini-form
+			data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdUtF7DdRpdIN7xA8o7hkab2gK6wNN34R8DaXsrVkW3ZTrd8A/viewform"
 			class="inline-flex items-center justify-center rounded-md bg-brand-indigo px-5 py-2 text-sm font-semibold text-white shadow-subtle transition duration-200 ease-soft hover:bg-brand-charcoal"
 		>
 			Book Now
-		</a>
+		</button>
 	</div>
 </header>
 
@@ -50,12 +52,12 @@
 		color: #f6f7f9;
 	}
 
-	.site-header.is-scrolled a[href='#reserve'] {
+	.site-header.is-scrolled button[data-open-mini-form] {
 		background-color: #ffffff;
 		color: #264337;
 	}
 
-	.site-header.is-scrolled a[href='#reserve']:hover {
+	.site-header.is-scrolled button[data-open-mini-form]:hover {
 		background-color: #f7f3ed;
 	}
 
@@ -63,4 +65,28 @@
 		filter: brightness(0) invert(1);
 	}
 </style>
+
+<script is:inline>
+	(function() {
+		const openMiniFormButton = document.querySelector('[data-open-mini-form]');
+		if (openMiniFormButton) {
+			const formUrl = openMiniFormButton.getAttribute('data-form-url');
+			if (formUrl) {
+				openMiniFormButton.addEventListener('click', () => {
+					// Open form in popup window
+					const width = 800;
+					const height = 1000;
+					const left = (window.innerWidth - width) / 2;
+					const top = (window.innerHeight - height) / 2;
+					
+					window.open(
+						formUrl,
+						'SatoFoto Booking Form',
+						`width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+					);
+				});
+			}
+		}
+	})();
+</script>
 

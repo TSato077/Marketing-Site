@@ -2,15 +2,40 @@
 	<div class="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 text-center lg:px-10">
 		<h2 class="text-4xl font-semibold leading-tight md:text-5xl">Don’t Let the Season Slip Away.</h2>
 		<p class="max-w-2xl text-lg text-white/80">Limited dates. Exceptional imagery.</p>
-		<a
-			href="#reserve"
-			data-mailto-trigger="final"
+		<button
+			type="button"
+			data-open-mini-form
+			data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdUtF7DdRpdIN7xA8o7hkab2gK6wNN34R8DaXsrVkW3ZTrd8A/viewform"
 			class="inline-flex items-center justify-center rounded-md bg-white px-8 py-3 text-base font-semibold text-brand-holiday shadow-subtle transition duration-200 ease-soft hover:-translate-y-0.5 hover:bg-brand-gray"
 		>
 			Reserve Your Session
-		</a>
+		</button>
 	</div>
 </section>
+
+<script is:inline>
+	(function() {
+		const openMiniFormButtons = document.querySelectorAll('[data-open-mini-form]');
+		openMiniFormButtons.forEach((button) => {
+			const formUrl = button.getAttribute('data-form-url');
+			if (formUrl) {
+				button.addEventListener('click', () => {
+					// Open form in popup window
+					const width = 800;
+					const height = 1000;
+					const left = (window.innerWidth - width) / 2;
+					const top = (window.innerHeight - height) / 2;
+					
+					window.open(
+						formUrl,
+						'SatoFoto Booking Form',
+						`width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+					);
+				});
+			}
+		});
+	})();
+</script>
 
 
 

@@ -74,19 +74,21 @@ const offerImage3Alt = 'Older son leaning casually against the barn frame in sof
 					.
 				</p>
 			</div>
-			<a
-				href="#reserve"
-				data-mailto-trigger="offer"
+			<button
+				type="button"
+				data-open-mini-form
+				data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdUtF7DdRpdIN7xA8o7hkab2gK6wNN34R8DaXsrVkW3ZTrd8A/viewform"
 				class="mt-10 inline-flex items-center justify-center rounded-md bg-brand-indigo px-8 py-3 text-base font-semibold text-white shadow-subtle transition duration-200 ease-soft hover:-translate-y-0.5 hover:bg-brand-charcoal hover:shadow-lg"
 			>
-				Reserve My Family’s Spot
-			</a>
+				Reserve My Family's Spot
+			</button>
 		</div>
 	</div>
 </section>
 
 <script is:inline>
 	(function() {
+		// Handle private form buttons
 		const openPrivateFormButtons = document.querySelectorAll('[data-open-private-form]');
 		openPrivateFormButtons.forEach((button) => {
 			const formUrl = button.getAttribute('data-form-url');
@@ -101,6 +103,27 @@ const offerImage3Alt = 'Older son leaning casually against the barn frame in sof
 					window.open(
 						formUrl,
 						'SatoFoto Private Booking',
+						`width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+					);
+				});
+			}
+		});
+
+		// Handle mini form buttons
+		const openMiniFormButtons = document.querySelectorAll('[data-open-mini-form]');
+		openMiniFormButtons.forEach((button) => {
+			const formUrl = button.getAttribute('data-form-url');
+			if (formUrl) {
+				button.addEventListener('click', () => {
+					// Open form in popup window
+					const width = 800;
+					const height = 1000;
+					const left = (window.innerWidth - width) / 2;
+					const top = (window.innerHeight - height) / 2;
+					
+					window.open(
+						formUrl,
+						'SatoFoto Booking Form',
 						`width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
 					);
 				});

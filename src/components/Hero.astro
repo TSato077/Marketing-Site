@@ -24,13 +24,14 @@ const heroAlt = 'Family portrait under the sunlit barn walkway at Sahuaro Ranch 
 				Photo session with Takashi Sato
 			</p>
 			<div class="flex flex-col gap-3 sm:flex-row">
-				<a
-					href="#reserve"
-					data-mailto-trigger="hero"
+				<button
+					type="button"
+					data-open-mini-form
+					data-form-url="https://docs.google.com/forms/d/e/1FAIpQLSdUtF7DdRpdIN7xA8o7hkab2gK6wNN34R8DaXsrVkW3ZTrd8A/viewform"
 					class="inline-flex items-center justify-center rounded-md bg-brand-indigo px-6 py-3 text-base font-semibold text-white shadow-subtle transition duration-200 ease-soft hover:-translate-y-0.5 hover:bg-brand-holiday hover:shadow-lg"
 				>
 					Reserve Your Session
-				</a>
+				</button>
 				<a
 					href="#reserve"
 					class="inline-flex items-center justify-center rounded-md border border-brand-holiday/60 px-6 py-3 text-base font-semibold text-brand-holiday transition duration-200 ease-soft hover:-translate-y-0.5 hover:border-brand-indigo hover:text-brand-indigo"
@@ -55,5 +56,29 @@ const heroAlt = 'Family portrait under the sunlit barn walkway at Sahuaro Ranch 
 	</figure>
 	</div>
 </section>
+
+<script is:inline>
+	(function() {
+		const openMiniFormButtons = document.querySelectorAll('[data-open-mini-form]');
+		openMiniFormButtons.forEach((button) => {
+			const formUrl = button.getAttribute('data-form-url');
+			if (formUrl) {
+				button.addEventListener('click', () => {
+					// Open form in popup window
+					const width = 800;
+					const height = 1000;
+					const left = (window.innerWidth - width) / 2;
+					const top = (window.innerHeight - height) / 2;
+					
+					window.open(
+						formUrl,
+						'SatoFoto Booking Form',
+						`width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+					);
+				});
+			}
+		});
+	})();
+</script>
 
 

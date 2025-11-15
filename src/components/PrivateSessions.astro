@@ -26,11 +26,11 @@ const privateFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScfMX12xdnQET-h
 
 <script is:inline>
 	(function() {
-		const openPrivateFormButton = document.querySelector('[data-open-private-form]');
-		if (openPrivateFormButton) {
-			const formUrl = openPrivateFormButton.getAttribute('data-form-url');
+		const openPrivateFormButtons = document.querySelectorAll('[data-open-private-form]');
+		openPrivateFormButtons.forEach((button) => {
+			const formUrl = button.getAttribute('data-form-url');
 			if (formUrl) {
-				openPrivateFormButton.addEventListener('click', () => {
+				button.addEventListener('click', () => {
 					// Open form in popup window
 					const width = 800;
 					const height = 1000;
@@ -44,7 +44,7 @@ const privateFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScfMX12xdnQET-h
 					);
 				});
 			}
-		}
+		});
 	})();
 </script>
 
